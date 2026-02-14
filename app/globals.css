@@ -1,0 +1,351 @@
+:root {
+  --bg: #f6f8f3;
+  --surface: #ffffffcc;
+  --text: #162015;
+  --muted: #445344;
+  --accent: #0f6a3f;
+  --accent-2: #f2c94c;
+  --ring: #16331f29;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+body {
+  font-family: var(--font-manrope), sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 16% 12%, #d6ebca 0, transparent 38%),
+    radial-gradient(circle at 88% 84%, #ffe9b9 0, transparent 40%),
+    linear-gradient(120deg, #eef4e9 0%, var(--bg) 45%, #f8f5ec 100%);
+}
+
+.page-glow {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 72% 28%, #90c49f44 0, transparent 42%),
+    radial-gradient(circle at 22% 80%, #f2c94c33 0, transparent 35%);
+  z-index: -1;
+}
+
+.hero {
+  width: min(980px, 92vw);
+  min-height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1.5rem 0 2rem;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.brand-logo {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+.brand-name {
+  font-family: var(--font-syne), sans-serif;
+  letter-spacing: 0.02em;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.hero-main {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 420px);
+  align-items: center;
+  gap: 1.2rem;
+  flex: 1;
+}
+
+.content {
+  align-self: center;
+  max-width: 34rem;
+  animation: rise 560ms ease both;
+}
+
+.kicker {
+  margin: 0 0 0.9rem;
+  color: var(--muted);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.76rem;
+}
+
+h1 {
+  margin: 0;
+  font-family: var(--font-syne), sans-serif;
+  font-size: clamp(2rem, 5vw, 4.2rem);
+  line-height: 1.02;
+  letter-spacing: -0.015em;
+  max-width: 18ch;
+}
+
+.subtext {
+  margin: 1rem 0 0;
+  color: var(--muted);
+  max-width: 58ch;
+  font-size: clamp(1rem, 1.8vw, 1.1rem);
+}
+
+.product-mention {
+  margin: 0.8rem 0 0;
+  font-size: 0.95rem;
+  color: #28452f;
+}
+
+.product-mention strong {
+  color: var(--accent);
+}
+
+.hero-media {
+  position: relative;
+  width: 100%;
+  height: clamp(260px, 40vw, 440px);
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid var(--ring);
+  box-shadow: 0 20px 50px #183b2524;
+  background: #f0f6ee;
+}
+
+.highlights {
+  display: flex;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+  padding: 0.9rem;
+  border-radius: 18px;
+  background: var(--surface);
+  border: 1px solid var(--ring);
+  backdrop-filter: blur(4px);
+  animation: rise 560ms ease 110ms both;
+}
+
+.highlights p {
+  margin: 0;
+  padding: 0.45rem 0.7rem;
+  border-radius: 999px;
+  background: #ffffffd1;
+  border: 1px solid #d6dfd3;
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: #203324;
+}
+
+.services {
+  animation: rise 560ms ease 110ms both;
+}
+
+.featured-product {
+  animation: rise 560ms ease 90ms both;
+}
+
+.product-card {
+  display: grid;
+  grid-template-columns: 164px minmax(0, 1fr);
+  align-items: start;
+  gap: 0.95rem;
+  border-radius: 22px;
+  border: 1px solid #c9dcc7;
+  background:
+    radial-gradient(circle at 88% 18%, #e8f5df 0, transparent 38%),
+    linear-gradient(130deg, #ffffff 0%, #f2f8ef 100%);
+  padding: 1.1rem;
+  box-shadow: 0 14px 36px #193e2814;
+}
+
+.product-preview {
+  position: relative;
+  width: 100%;
+  height: 150px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid #d4e4cf;
+  background: #fff;
+}
+
+.product-preview-image {
+  object-fit: cover;
+}
+
+.product-body {
+  min-width: 0;
+}
+
+.product-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.9rem;
+}
+
+.product-name {
+  margin: 0;
+  font-family: var(--font-syne), sans-serif;
+  font-size: clamp(1.2rem, 2.4vw, 1.65rem);
+  line-height: 1.05;
+}
+
+.product-tagline {
+  margin: 0.35rem 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.product-link {
+  color: var(--accent);
+  font-weight: 800;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.product-link:hover {
+  text-decoration: underline;
+}
+
+.product-points {
+  margin-top: 0.9rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.product-points p {
+  margin: 0;
+  padding: 0.42rem 0.68rem;
+  border-radius: 999px;
+  border: 1px solid #d5e4d1;
+  background: #ffffffd1;
+  color: #27412d;
+  font-size: 0.84rem;
+  font-weight: 700;
+}
+
+.product-cta {
+  margin-top: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 0.68rem 1.12rem;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: 0 8px 22px #0f6a3f2e;
+  transition: transform 180ms ease;
+}
+
+.product-cta:hover {
+  transform: translateY(-2px);
+}
+
+.services-title {
+  margin: 0 0 0.7rem;
+  color: var(--muted);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.72rem;
+}
+
+.footer {
+  margin-top: 0.4rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--ring);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.footer p {
+  margin: 0;
+}
+
+.footer a {
+  color: var(--accent);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    gap: 1.1rem;
+    padding-top: 1rem;
+  }
+
+  .hero-main {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .content {
+    max-width: 100%;
+  }
+
+  .hero-media {
+    height: min(58vw, 340px);
+  }
+
+  .product-head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .product-card {
+    grid-template-columns: 1fr;
+  }
+
+  .product-preview {
+    height: 140px;
+  }
+
+  .highlights {
+    padding: 0.75rem;
+  }
+}
